@@ -1,0 +1,259 @@
+     /* CSS LENGKAP DARI JAWABAN SEBELUMNYA DI SINI */
+        /* Pastikan semua CSS dari jawaban saya sebelumnya sudah Anda salin ke sini */
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin-top: 60px;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #2c2c2c; /* Latar belakang utama abu-abu sangat gelap */
+            color: #f0f0f0; /* Warna teks utama putih keabuan */
+            line-height: 1.6;
+        }
+
+        /* Tipografi yang lebih elegan */
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff; /* Judul utama putih */
+            margin-bottom: 0.75em;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.8em; } /* Ukuran font lebih besar dan hierarkis */
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.6em; color: #e0e0e0; } /* Sub-judul sedikit lebih lembut */
+        p {
+            font-size: 1em; /* Ukuran standar untuk paragraf */
+            color: #cccccc; /* Warna teks paragraf abu-abu terang */
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: #a08c7d; /* Warna link cokelat muda */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #bfae9d; /* Warna link cokelat lebih terang saat hover */
+            text-decoration: underline;
+        }
+
+        /* Header dan Jumbotron */
+        .jumbotron {
+            padding: 50px 20px;
+            background-color: #4a3b32; /* Cokelat tua yang hangat untuk jumbotron */
+            text-align: center;
+            color: #ffffff;
+            border-bottom: 3px solid #7a6a5d; /* Aksen cokelat lebih terang */
+        }
+        .jumbotron h1 {
+            font-size: 3.5em; /* Judul jumbotron lebih menonjol */
+            margin-bottom: 0.2em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Navigasi */
+        nav {
+            background-color: #333333; /* Abu-abu lebih gelap untuk navigasi */
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Agar selalu di atas */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Bayangan lebih jelas */
+            left: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            font-size: 1.2em; /* Ukuran font navigasi */
+            font-weight: 500;
+            color: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active { /* Tambahkan class .active jika ada halaman aktif */
+            background-color: #7a6a5d; /* Aksen cokelat saat hover/aktif */
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Konten Utama */
+        main {
+            padding: 30px 20px;
+            display: flex;
+            flex-wrap: wrap; /* Agar responsif jika aside pindah ke bawah */
+            gap: 30px;
+            max-width: 1300px; /* Lebar maksimum konten */
+            margin: 20px auto; /* Jarak atas/bawah dan tengahkan */
+        }
+
+        #content {
+            flex: 3; /* Konten utama lebih lebar */
+            min-width: 300px; /* Lebar minimum sebelum wrap */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        aside {
+            flex: 1; /* Sidebar lebih sempit */
+            min-width: 280px; /* Lebar minimum */
+        }
+
+        /* Kartu Artikel */
+        .card {
+            background-color: #3d3d3d; /* Latar belakang kartu abu-abu gelap */
+            border-radius: 12px; /* Sudut lebih halus */
+            padding: 25px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Bayangan lebih dalam */
+            border: 1px solid #505050; /* Border halus */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Efek angkat saat hover */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        .card h1, .card h2 {
+            margin-top: 0; /* Hapus margin atas untuk judul pertama di kartu */
+            border-bottom: 2px solid #7a6a5d; /* Garis bawah aksen untuk judul kartu */
+            padding-bottom: 0.3em;
+            display: inline-block; /* Agar border bottom hanya selebar teks */
+        }
+        .card p {
+            text-align: justify; /* Teks rata kiri-kanan */
+            font-size: 1.05em; /* Sedikit lebih besar agar nyaman dibaca */
+            color: #cccccc;
+        }
+
+        .featured-image {
+            width: 100%;
+            /* max-height: 350px;  Dihapus agar placeholder bisa menentukan tinggi berdasarkan rasio dari URL */
+            height: 350px; /* Atau set tinggi eksplisit agar konsisten */
+            object-fit: cover; /* Gambar mengisi area tanpa distorsi */
+            object-position: center;
+            border-radius: 8px; /* Sudut gambar */
+            margin-bottom: 20px; /* Jarak bawah gambar */
+            border: 2px solid #555; /* Border halus untuk gambar */
+            background-color: #4a3b32; /* Warna fallback jika gambar placeholder tidak muncul */
+            color: white; /* Warna teks fallback */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+
+        /* Sidebar Profil */
+        .profile.card { /* Styling spesifik untuk kartu profil */
+            background-color: #4a3b32; /* Warna cokelat agar menonjol sebagai profil */
+            border-color: #7a6a5d;
+        }
+        .profile header {
+            text-align: center; /* Pusatkan header profil */
+            margin-bottom: 20px;
+        }
+        .profile header p { /* Teks "Makanan Nusantara" di profil */
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+            width: 100%; /* Lebar penuh */
+            padding: 10px 0; /* Padding atas dan bawah */
+        }
+        .profile .profile-img-container { /* Kontainer untuk gambar profil agar bisa di-style sebagai placeholder */
+            width: 150px; /* Ukuran gambar profil */
+            height: 150px;
+            border-radius: 50%; /* Bentuk lingkaran */
+            margin: 0 auto 15px auto; /* Tengahkan gambar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3d3d3d; /* Warna fallback */
+            color: white;
+            font-size: 1em;
+            border: 4px solid #7a6a5d; /* Border aksen cokelat */
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            overflow: hidden; /* Untuk memastikan gambar placeholder tidak keluar dari lingkaran */
+        }
+        .profile .profile-img-container img { /* Jika ada img di dalamnya */
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+        }
+
+        .profile table {
+            width: 100%;
+            color: #e0e0e0; /* Warna teks tabel */
+            margin-top: 20px;
+            border-collapse: collapse; /* Hilangkan spasi antar border sel */
+        }
+        .profile th, .profile td {
+            padding: 10px 6px; /* Padding sel tabel */
+            text-align: left; /* Teks rata kiri */
+            border-bottom: 1px solid #7a6a5d; /* Garis pemisah antar baris */
+        }
+        .profile th {
+            font-weight: bold;
+            color: #ffffff; /* Teks header tabel putih */
+            width: 80px; /* Lebar kolom header */
+            font-size: 13px;
+        }
+        .profile td {
+            color: #f0f0f0;
+            font-size: 14px; /* Ukuran font sel tabel */
+
+        }
+        .profile table tr:last-child th,
+        .profile table tr:last-child td {
+            border-bottom: none; /* Hilangkan border pada baris terakhir */
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px 20px; /* Padding footer disesuaikan */
+            color: #bbbbbb; /* Warna teks footer abu-abu terang */
+            background-color: #1e1e1e; /* Latar footer paling gelap */
+            text-align: center;
+            font-weight: 500; /* Sedikit lebih tebal */
+            font-size: 0.95em; /* Ukuran font footer */
+            margin-top: 30px; /* Jarak atas dari konten utama */
+        }
+
+        /* Responsif (Contoh sederhana) */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column; /* Konten dan sidebar tumpuk di layar kecil */
+            }
+            #content, aside {
+                flex: none; /* Hapus flex grow/shrink */
+                width: 100%; /* Lebar penuh */
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 10px 0;
+            }
+            .jumbotron h1 { font-size: 2.5em; }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; }
+        }
